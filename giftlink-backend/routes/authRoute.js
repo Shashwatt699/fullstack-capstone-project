@@ -47,10 +47,10 @@ router.post('/register', async (req, res) => {
                 id: newUser.inseretedId,
             },
         };
-        const authtoken = jwt.sign(payload, JWT_SECRET);
+        const authToken = jwt.sign(payload, JWT_SECRET);
 
         logger.info('User registered Successfully');
-        res.json({ authtoken, email });
+        res.json({ authToken, email });
     } catch (e) {
         return res.status(500).send('Internal Server Error');
     }
